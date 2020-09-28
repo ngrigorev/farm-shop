@@ -43,9 +43,10 @@ export class CategoryComponent  implements OnInit {
           this.medicamentList = response.data;
         }
 
-        this.visible = page === 0
-                      && response.isSuccess
-                      && this.medicamentList?.length > 0;
+        if (page === 0) {
+          this.visible = response.isSuccess
+                        && this.medicamentList?.length > 0;
+        }
       });
   }
 }
