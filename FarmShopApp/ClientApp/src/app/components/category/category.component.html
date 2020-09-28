@@ -1,0 +1,21 @@
+<mat-expansion-panel *ngIf="visible" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      {{category.name}}
+    </mat-panel-title>
+    <mat-panel-description class="right-aligned">
+      {{panelOpenState ? 'open' : 'closed'}}
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <div class="button-row">
+    <button mat-raised-button (click)="prev()">Prev</button>
+    <button mat-raised-button (click)="next()">Next</button>
+  </div>
+
+  <div class="medicament-row">
+    <ng-container *ngFor="let item of medicamentList">
+      <app-medicament [medicament]="item"></app-medicament>
+    </ng-container>
+  </div>
+</mat-expansion-panel>

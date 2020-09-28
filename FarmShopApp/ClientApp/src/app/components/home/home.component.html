@@ -1,0 +1,7 @@
+<h1>Farm shop</h1>
+
+<mat-accordion>
+  <ng-container *ngFor="let cat of categoryList">
+    <app-category [category]="cat"></app-category>
+  </ng-container>
+</mat-accordion>

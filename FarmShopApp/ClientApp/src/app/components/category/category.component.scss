@@ -1,0 +1,18 @@
+.button-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-panel-description.right-aligned {
+  flex-grow: 0;
+}
+
+.medicament-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  app-medicament {
+    padding: 10px;
+  }
+}

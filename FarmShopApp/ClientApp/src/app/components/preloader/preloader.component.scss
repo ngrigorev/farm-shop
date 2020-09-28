@@ -1,0 +1,74 @@
+$color1-1:rgb(26, 129, 173);
+$color1-2:rgb(218, 221, 36);
+$color1-3:rgb(209, 80, 32);
+$color1-4:rgb(19, 156, 108);
+$size: 80px;
+
+:host {
+  position: absolute;
+  width: $size;
+  height: $size;
+  top:calc(50vh - (#{$size} / 2));
+  left:calc(50vw - (#{$size} / 2));
+
+  .square {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .item {
+    position: absolute;
+    height: 50%;
+    width: 50%;
+    opacity: .8;
+    mix-blend-mode: multiply;
+    animation: item-rotate 2s infinite ease;
+
+    &:nth-child(1) {
+      top: -25%;
+      left: 25%;
+      background-color: $color1-1;
+    }
+
+    &:nth-child(2) {
+      top: 25%;
+      left: -25%;
+      background-color: $color1-2;
+      animation-delay: 1.5s;
+    }
+
+    &:nth-child(3) {
+      top: 25%;
+      left: 75%;
+      background-color: $color1-3;
+      animation-delay: .5s;
+    }
+
+    &:nth-child(4) {
+      top: 75%;
+      left: 25%;
+      background-color: $color1-4;
+      animation-delay: 1s;
+    }
+  }
+}
+
+@keyframes item-rotate {
+  0% {
+    transform: none;
+  }
+
+  20% {
+    transform: rotate(45deg);
+  }
+
+  40% {
+    border-radius: 50%;
+    transform: rotate(90deg);
+  }
+
+  100% {
+    transform: rotate(90deg);
+  }
+}

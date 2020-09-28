@@ -76,6 +76,8 @@ namespace FarmShopApp
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
+            app.UseCors(builder => builder.AllowAnyOrigin());
         }
     }
 }
